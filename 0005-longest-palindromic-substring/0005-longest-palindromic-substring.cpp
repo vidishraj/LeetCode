@@ -33,21 +33,6 @@ public:
                 } 
             }
         }
-        // for(int i=0;i<s.length();i++){ // O(n2)
-        //     for(int j=i+1;j<s.length();j++){
-        //         if(memoryTable[i+1][j-1]==1 and s[i]==s[j]){
-        //             memoryTable[i][j]=1;
-        //         }
-        //         printf("%d ,%d, %d \n", i, j,memoryTable[i+1][j-1]);
-        //     }
-//         // }
-        
-//          for(int i=0;i<s.length();i++){
-//             for(int j=0;j<s.length();j++){
-//                 cout<<memoryTable[i][j];
-//             }
-//             cout<<"\n";
-//         }
         int max=0;
         for(int i=0; i<s.length() ;i++){
             for(int j=i;j<s.length();j++){
