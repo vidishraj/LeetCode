@@ -1,34 +1,32 @@
 import random
 
-
 class RandomizedSet:
-    insertionObject: dict
 
     def __init__(self):
-        self.insertionObject = {}
+        self.lst = []
+        self.idx_map = {}
 
-    def insert(self, val: int) -> bool:
-        if self.insertionObject.get(val) is None:
-            self.insertionObject[val] = True
-            return True
-        else:
+    def search(self, val):
+        return val in self.idx_map
+
+    def insert(self, val):
+        if self.search(val):
             return False
 
-    def remove(self, val: int) -> bool:
-        #Equal probability of returning any item
-        if self.insertionObject.get(val) is None:
-            return False
-        else:
-            # self.insertionObject[val] = False
-            self.insertionObject.pop(val)
-            return True
+        self.lst.append(val)
+        self.idx_map[val] = len(self.lst) - 1
+        return True
 
-    def getRandom(self) -> int:
-        keyList = list(self.insertionObject.keys())
-        randomIndex = random.Random().randint(0, len(keyList)-1)
-        return keyList[randomIndex]
-# Your RandomizedSet object will be instantiated and called as such:
-# obj = RandomizedSet()
-# param_1 = obj.insert(val)
-# param_2 = obj.remove(val)
-# param_3 = obj.getRandom()
+    def remove(self, val):
+        if not self.search(val):
+            return False
+
+        idx = self.idx_map[val]
+        self.lst[idx] = self.lst[-1]
+        self.idx_map[self.lst[-1]] = idx
+        self.lst.pop()
+        del self.idx_map[val]
+        return True
+
+    def getRandom(self):
+        return random.choice(self.lst)
