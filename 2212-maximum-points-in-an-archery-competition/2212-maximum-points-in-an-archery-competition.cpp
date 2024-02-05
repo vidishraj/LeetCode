@@ -4,7 +4,7 @@ class Solution {
 public:
 
     void checkBothConditionRecursive(int index, vector<int> &arrows, int arrowsLeft, int currentPoints, vector<int> currentScoreCard){
-        if(index==arrows.size()){
+        if(index==12){
             if(currentPoints>this->bestPoints){
                 if(arrowsLeft>0){
                     currentScoreCard[0]=arrowsLeft;
@@ -14,14 +14,6 @@ public:
             }
                 return;
         }
-        
-        // cout<<index;
-        // cout<<arrowsLeft;
-        // cout<<"\t";
-        // cout<<currentPoints;
-        // cout<<'\n';
-        //condition 1-> We check if we can win the points here from alice and reduce the arrows.
-        //maybe check if we should win 0 points at all?
         if(index!=0 and arrows[index]+1<=arrowsLeft){
             currentScoreCard.push_back(0);
             this->checkBothConditionRecursive(index+1, arrows, arrowsLeft, currentPoints,currentScoreCard);//condition where we dont win the current points
