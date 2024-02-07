@@ -39,11 +39,6 @@ public:
            runningCounter++;
        }
         
-       // for(int i:solution){
-       //  cout<<i;
-       // }z
-        // cout<<solution[solution.size()-500];
-        
         return solution[0];
     }
 };
