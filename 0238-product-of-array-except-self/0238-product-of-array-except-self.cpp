@@ -1,8 +1,6 @@
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
-        //two pointer -> double iteration question. Where we are going to iterate from the front and the back. 
-        // []
         vector<int> leftValues(nums.size());
         vector<int> rightValues(nums.size()); 
         vector<int> solution(nums.size()); 
