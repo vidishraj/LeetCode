@@ -18,12 +18,6 @@ public:
             rightMultiplicant*=nums[i+1];
             rightValues[i]=(rightMultiplicant);
         }
-        for(int i=0;i<nums.size();i++){
-            cout<<leftValues[i];
-            cout<<"\t";
-            cout<<rightValues[i];
-            cout<<"\n";
-        }
         for(int i = 0 ; i<nums.size();i++){
             solution[i]=leftValues[i]*rightValues[i];
         }
