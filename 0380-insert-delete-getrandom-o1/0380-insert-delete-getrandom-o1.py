@@ -1,32 +1,47 @@
-import random
-
 class RandomizedSet:
-
+    itemExists:dict
+    items:list
+    deleteCount:int
     def __init__(self):
-        self.lst = []
-        self.idx_map = {}
-
-    def search(self, val):
-        return val in self.idx_map
-
-    def insert(self, val):
-        if self.search(val):
+        self.items = []
+        self.itemExists = {}
+        self.deleteCount = 0
+    def insert(self, val: int) -> bool:
+        if(self.itemExists.get(val) is None):
+            self.items.append(val)
+            self.itemExists[val]=len(self.items)-1
+            return True
+        else:
             return False
 
-        self.lst.append(val)
-        self.idx_map[val] = len(self.lst) - 1
-        return True
-
-    def remove(self, val):
-        if not self.search(val):
+    def remove(self, val: int) -> bool:
+        if self.itemExists.get(val) is None:
             return False
+        else:
+            if len(self.items)==1:
+                self.itemExists[val] = None
+                self.items=[]
+                return True
+            index = self.itemExists[val]
+            self.itemExists[val] = None
+            # print(val, index)
+            self.items[index] = self.items[len(self.items)-1]
+            self.itemExists[self.items[len(self.items)-1]] = index
+            self.items[len(self.items)-1]= val
+            self.items.pop()
+            del self.itemExists[val]
+            self.deleteCount+=1
+            return True
 
-        idx = self.idx_map[val]
-        self.lst[idx] = self.lst[-1]
-        self.idx_map[self.lst[-1]] = idx
-        self.lst.pop()
-        del self.idx_map[val]
-        return True
+    def getRandom(self) -> int:
+        # print(self.items, self.itemExists)
+        randomIndex = random.randint(0, len(self.items)-1)
+        # print(randomIndex)
+        return self.items[randomIndex]
 
-    def getRandom(self):
-        return random.choice(self.lst)
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
