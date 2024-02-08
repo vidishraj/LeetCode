@@ -1,19 +1,21 @@
+
 class Solution {
     
     unordered_map<int, int> gmap;
-public:
+    public:
     Solution() {
         this->gmap.clear();
     }
     
     int candy(vector<int>& ratings) {
         int start = 1;
+        
         for(int i=ratings.size()-1;i>0;i--){
             if(ratings[i]<ratings[i-1]){
                 start++;
             }
             else if(ratings[i]>=ratings[i-1] and start!=1){
-                gmap[i]=start;
+                this->gmap[i]=start;
                 start=1;
             }
         }
@@ -26,7 +28,7 @@ public:
         int total=start;
         for(int i= 1;i<ratings.size();i++){
             
-            if(gmap.find(i)==gmap.end()){
+            if(this->gmap.find(i)==this->gmap.end()){
             
                 //key doesnt exist in the dictionary
                 if(ratings[i-1]<ratings[i]){
@@ -49,12 +51,12 @@ public:
             else{
                 active=true;
                 if(ratings[i-1]<ratings[i]){
-                    int addition=max(begin+1,gmap[i]);
+                    int addition=max(begin+1,this->gmap[i]);
                     total+=addition;
-                    begin=gmap[i];
+                    begin=this->gmap[i];
                 }
                 else{
-                    begin=gmap[i];
+                    begin=this->gmap[i];
                     total+=begin;
                 }
             }
