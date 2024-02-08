@@ -12,9 +12,6 @@ public:
                 start=1;
             }
         }
-        for(auto it=gmap.begin();it!=gmap.end();it++){
-            cout<<it->first<<it->second<<"\n";
-        }
         int begin=1;
         bool active =false;
         if(start!=1){
@@ -22,9 +19,7 @@ public:
             begin=start;
         }
         int total=start;
-        // cout<<begin;
         for(int i= 1;i<ratings.size();i++){
-            // cout<<total<<begin<<i<<"\n";
             
             if(gmap.find(i)==gmap.end()){
             
