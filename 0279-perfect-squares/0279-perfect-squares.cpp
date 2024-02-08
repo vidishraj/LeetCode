@@ -32,6 +32,9 @@ public:
                     // }
                     int minimum = min(1+solutionMap[i-(j*j)], 1+solutionMap[i-((j-1)*(j-1))]);
                     solution= min(solution, minimum);
+                    if(solution==2){
+                        break;
+                    }
                         
                 }
                 solutionMap[i]=solution;
