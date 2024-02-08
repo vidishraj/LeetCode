@@ -24,7 +24,6 @@ class RandomizedSet:
                 return True
             index = self.itemExists[val]
             self.itemExists[val] = None
-            # print(val, index)
             self.items[index] = self.items[len(self.items)-1]
             self.itemExists[self.items[len(self.items)-1]] = index
             self.items[len(self.items)-1]= val
@@ -34,7 +33,6 @@ class RandomizedSet:
             return True
 
     def getRandom(self) -> int:
-        # print(self.items, self.itemExists)
         randomIndex = random.randint(0, len(self.items)-1)
         # print(randomIndex)
         return self.items[randomIndex]
