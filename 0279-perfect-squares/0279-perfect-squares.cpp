@@ -20,7 +20,7 @@ public:
             }
             else{
                 int solution = 20000;
-                for(int j=currentNum;j>sqrt(currentNum);j--){
+                for(int j=currentNum;j>currentNum-i and j>1;j--){
                     // if(i==869){
                     //     cout<<j<<"\t";
                     //     cout<<(j*j)<<"\t";
