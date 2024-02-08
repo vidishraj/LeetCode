@@ -1,7 +1,12 @@
 class Solution {
+    
+    unordered_map<int, int> gmap;
 public:
+    Solution() {
+        this->gmap.clear();
+    }
+    
     int candy(vector<int>& ratings) {
-        unordered_map<int, int> gmap;
         int start = 1;
         for(int i=ratings.size()-1;i>0;i--){
             if(ratings[i]<ratings[i-1]){
