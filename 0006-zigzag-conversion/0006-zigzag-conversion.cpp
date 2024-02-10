@@ -23,7 +23,6 @@ public:
             }
             bool direction=true;
             int localStart = start;
-            cout<<downwardClimb<<upwardClimb<<ans<<"\t";
             while(localStart<s.size()){
                 ans.push_back(s[localStart]);
                 if(direction){
