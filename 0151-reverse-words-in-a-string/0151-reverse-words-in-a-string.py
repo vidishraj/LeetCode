@@ -4,9 +4,7 @@ class Solution:
         start=0
         s.strip()
         stringList = s.split()
-        # print(stringList)
         while(start<=len(stringList)+back):
-            # print(start, len(stringList)+back)
             temp = stringList[start]
             stringList[start] = stringList[back]
             stringList[back]=temp
