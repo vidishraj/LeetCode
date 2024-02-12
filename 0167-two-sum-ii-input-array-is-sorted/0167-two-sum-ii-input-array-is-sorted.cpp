@@ -8,8 +8,7 @@ public:
         */
        int firstIndex=0;
        int lastIndex = -1;
-       
-        lastIndex= numbers.size()-1;
+       lastIndex= numbers.size()-1;
        vector<int>solution;
         while(firstIndex<lastIndex){
             if(numbers[firstIndex]+numbers[lastIndex]==target){
