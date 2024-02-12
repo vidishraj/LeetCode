@@ -4,11 +4,11 @@ public:
        int firstIndex=0;
        int lastIndex = -1;
        lastIndex= numbers.size()-1;
-       vector<int>solution;
+       vector<int>solution(2);
         while(firstIndex<lastIndex){
             if(numbers[firstIndex]+numbers[lastIndex]==target){
-                solution.push_back(firstIndex+1);
-                solution.push_back(lastIndex+1);
+                solution[0]=(firstIndex+1);
+                solution[1]=(lastIndex+1);
             }
             if(numbers[firstIndex]+numbers[lastIndex]>target){
                 lastIndex--;
