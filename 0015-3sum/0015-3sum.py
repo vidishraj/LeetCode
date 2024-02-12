@@ -25,7 +25,7 @@ class Solution(object):
             for j in range(i+1, len(nums)):
                 itemToFind = 0-nums[i]-nums[j]
                 if itemDict.get(itemToFind) is not None:
-                    if (itemDict[itemToFind].get(i) is None and itemDict[itemToFind].get(j) is None) or nums.count(itemToFind)>2:
+                    if (itemDict[itemToFind].get(i) is None and itemDict[itemToFind].get(j) is None) or itemDict[itemToFind]['count']>2:
                         solutionList.append(tuple([nums[i], nums[j], itemToFind]))
         solutionList = list(set(tuple(sorted(sub)) for sub in solutionList))
                     
