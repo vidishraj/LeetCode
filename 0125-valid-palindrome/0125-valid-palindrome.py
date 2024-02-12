@@ -1,6 +1,3 @@
-import re
-
-
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         difference = 97 - 65
