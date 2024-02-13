@@ -7,7 +7,6 @@ class Solution(object):
         # Checking individual 3x3 boxes 
         while row < len(board):
             while column < len(board[row]):
-                # print(row, column, board[row][column], checkMap)
                 if board[row][column] != ".":
                     if checkMap.get(board[row][column]) is not None:
                         return False
