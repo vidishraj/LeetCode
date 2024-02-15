@@ -12,29 +12,24 @@ public:
         }
        int longest=1;
        while(end<s.size() and start<s.size()){
-       // cout<<end<<start<<"\n";
         if(charMap.find(s[end])==charMap.end()){
             charMap[s[end]]=end;
             end++;
         }
         else{
-            // cout<<"caught"<<s[end]<<"\n";
             char duplicateChar = s[end];
             
             while(s[start]!=duplicateChar){
-                // cout<<"deleting"<<s[start]<<"\n";
                 charMap.erase(s[start]);
                 start++;   
             }
             charMap.erase(s[start]);
             start++;
-            
         }
            if(end-start>longest){
                longest=end-start;
            }
         }
-        // cout<<end<<start;;
         if(end-start>longest){
             return end-start;
         }
