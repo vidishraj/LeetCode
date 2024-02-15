@@ -35,7 +35,6 @@ class Solution:
                 if matrix[i][0] is True:
                     matrix[i][0]=0
         if rowZero is True:
-            print("Hello")
             for i in range(len(matrix[0])):
                 matrix[0][i] = 0
         else:
