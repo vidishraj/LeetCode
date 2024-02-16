@@ -5,7 +5,6 @@ class Solution:
         result = []
         index = 1
         result = [points[0]]
-        # print(result)
         while(index<len(points)):
             if points[index][0]<=result[-1][1]:
                 result[-1][1]=min(result[-1][1], points[index][1])
@@ -13,6 +12,5 @@ class Solution:
             else:
                 result.append(points[index])
                 index+=1
-        # print(result)
         return len(result)
             
