@@ -14,7 +14,7 @@ public:
             result.push_back(matrix[0][0]);
             return result;
         }
-        while(result.size()!=matrix.size()*matrix[0].size()){
+        while(true){
             i = top;
             j=left;
             while(j<=right){
