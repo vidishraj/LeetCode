@@ -20,7 +20,6 @@ class Solution:
                 result = result[:-1]
             else:
                 result += f"/{currentBox}"
-            # print(result, currentBox, start)
             currentBox = ""
         if result=="":
             return "/"
