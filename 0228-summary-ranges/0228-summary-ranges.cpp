@@ -10,7 +10,7 @@ public:
         for(int i=0;i<nums.size()-1;i++){
             long num1=long(nums[i+1]);
             long num2 = long(nums[i]);
-            long long dif= num1-num2;
+            long dif= num1-num2;
             if(dif!=1){
                 string end = to_string(nums[i]);
                 if(stoi(start)==nums[i]){
