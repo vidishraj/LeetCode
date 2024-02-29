@@ -2,13 +2,6 @@
 from queue import Queue
 
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-
 class Solution:
     def isEvenOddTree(self, root: TreeNode) -> bool:
         if root is None:
@@ -30,7 +23,6 @@ class Solution:
                     if currentNode.right:
                         q.put(currentNode.right)
                         nextLevelCount += 1
-                    # print(currentNode.val, currentLevelVal, nextLevelCount, q.qsize(), lastSeenValue, currentLevelCount)
                     if currentLevelVal == 0:
                         if  not current:  # value should be odd and increasing left to right
                             if currentNode.val % 2 == 0:
