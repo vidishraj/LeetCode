@@ -2,7 +2,7 @@ class Solution:
     wordDict:dict
     dp:dict
         
-    # @lru_cache(maxsize=None)
+    @lru_cache(maxsize=None)
     def rec(self, word, startIndex, endIndex):
         """
         """
