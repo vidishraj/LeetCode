@@ -30,7 +30,11 @@ class Solution:
             self.dp[f"{startIndex}-{endIndex}"] = acceptSol or rejectSol
             return acceptSol or rejectSol
         else:
-            return self.rec(word, startIndex, endIndex+1) # No match we move forward
+            if self.dp.get(f"{startIndex}-{endIndex+1}") is not None:
+                return self.dp.get(f"{startIndex}-{endIndex+1}") #accept the word
+                
+            else:
+                return self.rec(word, startIndex, endIndex+1) # No match we move forward
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         """
             The idea is to start from the beginning, call rec function from beginning
