@@ -1,12 +1,14 @@
-from collections import defaultdict
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
         """
         It is sort of like two sum
         """
-        occurDict = defaultdict(int)
+        occurDict={}
         for num in nums:
-            occurDict[num]+=1
+            if occurDict.get(num) is None:
+                occurDict[num] = 1
+            else:
+                occurDict[num]+=1
         res=0
         for num in nums:
             if num<k and k-num==num:
