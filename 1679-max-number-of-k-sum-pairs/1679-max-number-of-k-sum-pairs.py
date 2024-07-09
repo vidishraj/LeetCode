@@ -14,8 +14,7 @@ class Solution:
                     res+=1
                     occurDict[num]-=2
             else:
-                if num<k and occurDict.get(k-num) is not None and occurDict[k-num]>0 and occurDict[num]>0:
-                    
+                if num<k and occurDict.get(k-num) is not None and occurDict[k-num]>0 and occurDict[num]>0:   
                     res+=1
                     occurDict[num]-=1
                     occurDict[k-num]-=1
