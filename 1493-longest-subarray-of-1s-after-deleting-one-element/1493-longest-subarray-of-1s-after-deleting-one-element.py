@@ -16,7 +16,6 @@ class Solution:
                 j+=1
             else:
                 if deleted:
-                    # print(lastDeletionIndex, longestOnes, i , j)
                     itemsToRemove = lastDeletionIndex-i
                     longestOnes-=itemsToRemove
                     i = lastDeletionIndex+1
