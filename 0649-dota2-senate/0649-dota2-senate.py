@@ -31,7 +31,6 @@ class Solution:
             else:
                 rCount += 1
             q.put(senator)
-        print(dCount, rCount)
         # Killing begins
         rKillsRemaining = 0
         dKillsRemaining = 0
