@@ -35,6 +35,9 @@ class Solution:
         remember the path to the two nodes
         Match the paths after that
         """
+        self.pathToP=[]
+        
+        self.pathToQ=[]
         self.rec(root, p, [],"P")
         self.rec(root, q, [],"Q")
         self.targetNode = None
