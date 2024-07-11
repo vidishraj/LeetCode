@@ -18,6 +18,7 @@ class Solution:
         currentSum+=node.val
         self.checkSum(node.left, currentSum)
         self.checkSum(node.right, currentSum)
+        
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
         """
             Can be fucking complicated. Have to go through every single node and check 
