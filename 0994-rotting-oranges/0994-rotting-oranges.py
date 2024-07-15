@@ -26,6 +26,7 @@ class Solution:
         mins = 0
         while minCheckRequired < freshOrangeCount + 1:
             gridCopy = copy.deepcopy(grid)
+            changes = 0
             freshOrange = 0
             for i in range(len(grid)):
                 for j in range(len(grid[0])):
@@ -34,8 +35,11 @@ class Solution:
                         freshOrange +=1
                         if self.checkIfAdjacentRotten(grid, i, j):
                             gridCopy[i][j] = 2
+                            changes+=1
             if freshOrange == 0:
                 return mins
+            if changes == 0:
+                return -1
             grid = gridCopy
             minCheckRequired += 1
             mins += 1
